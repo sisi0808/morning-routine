@@ -24,6 +24,8 @@ fi
 if [ -f "./daily_template.md" ]; then
     cp "./daily_template.md" "$OUTPUT_FILE"
     echo "Created daily log: $OUTPUT_FILE"
+    # クリップボードにコピー
+    echo "$OUTPUT_FILE" | pbcopy
 else
     echo "Error: daily_template.md not found"
     exit 1
